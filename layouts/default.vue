@@ -1,8 +1,23 @@
 <template>
   <div>
+    <h3>{{ title }}</h3>
+    <header/>
     <nuxt/>
   </div>
 </template>
+<script>
+import Header from './public/header/index.vue'
+export default {
+  components: {
+    Header
+  },
+  data() {
+    return {
+      title: '我是标题'
+    }
+  }
+}
+</script>
 
 <style>
 html {
