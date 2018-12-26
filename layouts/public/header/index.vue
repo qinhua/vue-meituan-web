@@ -1,4 +1,4 @@
-/* 
+/*
   name: header组件
   note: 无
   time: 2018-12-18
@@ -13,10 +13,10 @@
 </template>
 
 <script>
-import Geo from './geo'
-import Search from './search'
-import Nav from './nav'
-import User from './user'
+import Geo from './geo.vue'
+import Search from './search.vue'
+import Nav from './nav.vue'
+import User from './user.vue'
 export default {
   components: {
     Geo,
@@ -28,10 +28,10 @@ export default {
     return {
       title: 'xxx'
     }
-  }
+  },
+  mounted() {}
 }
 </script>
 
 <style lang="scss" scoped>
 </style>
-

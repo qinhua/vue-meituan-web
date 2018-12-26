@@ -2,11 +2,16 @@
   <div>
     <h3>{{ title }}</h3>
     <header/>
-    <nuxt/>
+    <div class="content">
+      <nuxt/>
+    </div>
+    <footer/>
   </div>
 </template>
 <script>
 import Header from './public/header/index.vue'
+import Footer from './public/footer/index.vue'
+
 export default {
   components: {
     Header
@@ -31,7 +36,6 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
-
 *,
 *:before,
 *:after {
