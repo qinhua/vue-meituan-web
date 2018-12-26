@@ -4,25 +4,21 @@
   time: 2018-12-18
 */
 <template>
-  <div>
-    <geo/>
-    <search/>
-    <nav/>
-    <user/>
+  <div class="m-header">
+    <el-row>
+      <el-col><top-bar/></el-col>
+      <el-col><search-bar/></el-col>
+    </el-row>  
   </div>
 </template>
 
 <script>
-import Geo from './geo.vue'
-import Search from './search.vue'
-import Nav from './nav.vue'
-import User from './user.vue'
+import topBar from './topBar.vue'
+import searchBar from './searchBar.vue'
 export default {
   components: {
-    Geo,
-    Search,
-    Nav,
-    User
+    topBar,
+    searchBar
   },
   data() {
     return {
@@ -33,5 +29,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@import '@/assets/css/public/header/index.scss';
 </style>

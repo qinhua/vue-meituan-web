@@ -1,20 +1,23 @@
 <template>
-  <div>
-    <h3>{{ title }}</h3>
-    <header/>
-    <div class="content">
-      <nuxt/>
-    </div>
-    <footer/>
-  </div>
+  <el-container>
+    <el-header>
+      <header-bar/>
+    </el-header>
+    <el-main>
+    <nuxt/></el-main>
+    <el-footer>
+      <footer-bar/>
+    </el-footer>
+  </el-container>
 </template>
 <script>
-import Header from './public/header/index.vue'
-import Footer from './public/footer/index.vue'
+import HeaderBar from './public/header/index.vue'
+import FooterBar from './public/footer/index.vue'
 
 export default {
   components: {
-    Header
+    HeaderBar,
+    FooterBar
   },
   data() {
     return {

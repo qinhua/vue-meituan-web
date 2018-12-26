@@ -1,11 +1,13 @@
 .m-header{
-  @at-root .el-header{
-    .m-header.m-header-topbar{
+  @at-root .el-header {
+    .m-header {
+      position: relative;
+      z-index:50;
+    }
+    .m-header-topbar{
       width: 1190px!important;
-      z-index: 9999;
       height: 40px;
       line-height: 40px;
-      z-index: 9;
     }
   }
   .m-geo {
@@ -94,14 +96,13 @@
 
         &.bd {
           dl {
-            width: 140%;
             position: relative;
+            width: 140%;
             border-top: 1px solid #e5e5e5;
             left: -31px;
             top: -1px;
             border-bottom: 1px solid #e5e5e5;
             border-left: 1px solid #E5E5E5;
-            position: relative;
 
             &:before {
               content: " ";
@@ -132,7 +133,7 @@
           padding: 30px 36px 36px 47px;
           width: 1250px;
           position: relative;
-          left: -1175px;
+          left: -1173px;
           z-index: 999;
           border: 1px solid #e5e5e5;
           display: none;
