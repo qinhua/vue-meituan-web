@@ -66,6 +66,7 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+    cache: false
   }
 }

@@ -1,5 +1,9 @@
 @import "./topbar.scss";
 @import "./search.scss";
+
+.el-header{
+  height:auto!important;
+}
 .m-header{
   @at-root .layout-default{
     .el-header{

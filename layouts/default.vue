@@ -4,15 +4,16 @@
       <header-bar/>
     </el-header>
     <el-main>
-    <nuxt/></el-main>
+      <nuxt/>
+    </el-main>
     <el-footer>
       <footer-bar/>
     </el-footer>
   </el-container>
 </template>
 <script>
-import HeaderBar from './public/header/index.vue'
-import FooterBar from './public/footer/index.vue'
+import HeaderBar from '@/components/public/header/index.vue'
+import FooterBar from '@/components/public/footer/index.vue'
 
 export default {
   components: {

@@ -19,27 +19,27 @@ time: 2018-12-18
         :span="15" 
         class="center">
         <div class="wrapper">
-          <el-input placeholder="搜索商家或地点"/>
-          <button class="el-button el-button-primary search-btn"><i 
+          <el-input
+            v-model="search"
+            placeholder="搜索商家或地点"
+            @focus="focusSearch"
+            @blur="focusBlur"/>
+          <button class="el-button el-button--primary search-btn"><i 
             class="el-icon-search"/></button>
           <dl 
-            class="hotPlace"
-            style="display:none">
+            v-if="isHotPlace"
+            class="hotPlace">
             <dt>热门搜索</dt>
-            <dd>火锅</dd>
-            <dd>火锅</dd>
-            <dd>火锅</dd>
-            <dd>火锅</dd>
-            <dd>火锅</dd>
+            <dd
+              v-for="(item, index) in hotList"
+              :key="index">{{ item }}</dd>          
           </dl>
           <dl
-            class="searchList"
-            style="display:none">
-            <dd>火锅</dd>
-            <dd>火锅</dd>
-            <dd>火锅</dd>
-            <dd>火锅</dd>
-            <dd>火锅</dd>
+            v-if="isSearchList"
+            class="searchList">
+            <dd
+              v-for="(item, index) in searchList"
+              :key="index">{{ item }}</dd>
           </dl>
         </div>
         <p class="suggest"><a href="">故宫博物院</a><a href="">故宫博物院</a><a href="">故宫博物院</a></p>
@@ -87,10 +87,30 @@ time: 2018-12-18
 <script>
 export default {
   data() {
-    return {}
+    return {
+      search: '',
+      isFocus: false,
+      searchList: ['火锅', '烧烤', '海底捞'],
+      hotList: ['武汉欢乐谷', '武汉海昌极地海洋公园', '中影国际影城']
+    }
+  },
+  computed: {
+    isHotPlace() {
+      return !this.search && this.isFocus
+    },
+    isSearchList() {
+      return this.search && this.isFocus
+    }
+  },
+  methods: {
+    focusSearch() {
+      this.isFocus = true
+    },
+    focusBlur() {
+      setTimeout(() => {
+        this.isFocus = false
+      }, 100)
+    }
   }
 }
 </script>
-
-<style lang="scss">
-</style>
