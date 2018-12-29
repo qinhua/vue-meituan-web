@@ -1,9 +1,5 @@
 .m-header{
   @at-root .el-header {
-    .m-header {
-      position: relative;
-      z-index:50;
-    }
     .m-header-topbar{
       width: 1190px!important;
       height: 40px;
@@ -44,10 +40,11 @@
     }
   }
   .m-nav{
+    position: relative;
     float: right;
     margin: 0;
     padding: 0;
-    z-index: 999;
+    z-index: 50;
     .nav {
       list-style: none;
       float: right;

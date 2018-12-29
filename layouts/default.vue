@@ -6,7 +6,9 @@
     <el-main>
       <nuxt/>
     </el-main>
-    <el-footer>
+    <el-footer
+      height="100%"
+      style="padding: 0">
       <footer-bar/>
     </el-footer>
   </el-container>
