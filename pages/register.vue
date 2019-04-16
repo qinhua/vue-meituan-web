@@ -2,42 +2,73 @@
   <div class="page-register">
     <article class="header">
       <header>
-        <a href class="site-logo"/>
+        <a 
+          href="/"
+          class="site-logo"/>
+        <span class="login">
+          <em class="bold">已有美团账号？</em>
+          <a href="/login">
+            <el-button
+              type="primary"
+              size="small">登录</el-button>
+          </a>
+        </span>
       </header>
-      <span class="login">
-        <em class="bold">已有美团账号？</em>
-        <a href="/login">
-          <el-button type="primary" size="small">登录</el-button>
-        </a>
-      </span>
     </article>
     <section>
       <el-form
-        :model="ruleForm"
-        status-icon
-        :rules="rules"
         ref="ruleForm"
+        :model="ruleForm"
+        :rules="rules"
+        status-icon
         label-width="100px"
         class="demo-ruleForm"
       >
-        <el-form-item label="用户名" prop="name">
-          <el-input type="text" v-model="ruleForm.name" autocomplete="off"></el-input>
+        <el-form-item 
+          label="用户名" 
+          prop="name">
+          <el-input 
+            v-model="ruleForm.name" 
+            type="text" 
+            autocomplete="off"/>
         </el-form-item>
-        <el-form-item label="邮箱" prop="email">
-          <el-input type="text" v-model="ruleForm.email" autocomplete="off"></el-input>
-          <el-button size="small" @click.prevent="getCode()">获取验证码</el-button>
+        <el-form-item 
+          label="邮箱" 
+          prop="email" 
+          class="vercode-model">
+          <el-input 
+            v-model="ruleForm.email" 
+            type="text" 
+            autocomplete="off"/>
+          <el-button 
+            size="small" 
+            @click.prevent="getCode()">{{statusMsg}}</el-button>
         </el-form-item>
-        <el-form-item label="验证码" prop="code">
-          <el-input v-model="ruleForm.code"></el-input>
+        <el-form-item 
+          label="验证码" 
+          prop="code">
+          <el-input v-model="ruleForm.code"/>
         </el-form-item>
-        <el-form-item label="密码" prop="pwd">
-          <el-input type="password" v-model="ruleForm.pwd" autocomplete="off"></el-input>
+        <el-form-item 
+          label="密码" 
+          prop="pwd">
+          <el-input 
+            v-model="ruleForm.pwd" 
+            type="password" 
+            autocomplete="off"/>
         </el-form-item>
-        <el-form-item label="确认密码" prop="cpwd">
-          <el-input type="password" v-model="ruleForm.cpwd" autocomplete="off"></el-input>
+        <el-form-item 
+          label="确认密码" 
+          prop="cpwd">
+          <el-input 
+            v-model="ruleForm.cpwd" 
+            type="password" 
+            autocomplete="off"/>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="submitForm('ruleForm')">同意协议并注册</el-button>
+          <el-button 
+            type="primary" 
+            @click="submitForm('ruleForm')">同意协议并注册</el-button>
           <el-button @click="resetForm('ruleForm')">重置</el-button>
         </el-form-item>
       </el-form>
@@ -49,7 +80,7 @@ export default {
   layout: 'blank',
   data() {
     return {
-      statusMsg: '',
+      statusMsg: '获取验证码',
       error: '',
       ruleForm: {
         name: '',
@@ -133,4 +164,17 @@ export default {
 
 <style lang="scss">
 @import '@/assets/css/register/index.scss';
+.vercode-model {
+  position: relative;
+  /deep/.el-input {
+    float: left;
+    width: 228px !important;
+  }
+  /deep/.el-button {
+    padding: 0 15px;
+    height: 40px;
+    margin-left: 10px;
+    line-height: 40px;
+  }
+}
 </style>

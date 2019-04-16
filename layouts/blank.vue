@@ -1,14 +1,13 @@
 <template>
-    <div class="layout-blank">
-        <nuxt></nuxt>
-    </div>
+  <div class="layout-blank">
+    <nuxt/>
+  </div>
 </template>
 <script>
 export default {
-    layout:'blank'
+  layout: 'blank'
 }
 </script>
 
 <style lang="scss">
-
 </style>
